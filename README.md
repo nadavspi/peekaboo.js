@@ -15,7 +15,7 @@ collapsibles](http://heydonworks.com/practical_aria_examples/#progressive-collap
 <h2 class="toggle-next">What happens next?</h2>
 <p>Surprise!</p>
 
-<script src="jquery.peekaboo.js">
+<script src="jquery.peekaboo.js"></script>
 <script>
   $('.toggle-next').peekaboo();
 </script>
