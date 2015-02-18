@@ -7,7 +7,7 @@ collapsibles](http://heydonworks.com/practical_aria_examples/#progressive-collap
 ## Example markup
 
 ```html
-<button>Navigation</button>
+<button class="toggle-next">Navigation</button>
 <nav>
   <!-- stuff -->
 </nav>
