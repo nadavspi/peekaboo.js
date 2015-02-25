@@ -30,3 +30,15 @@ collapsibles](http://heydonworks.com/practical_aria_examples/#progressive-collap
   display: block;
 }
 ```
+
+### Toggling some other element
+
+You can specify the ID of the content you'd like to toggle using the `data-toggle-target` attribute. This is useful if the content doesn't immediately follow the toggle button in your document.
+
+```html
+<button class="toggle-next" data-toggle-target="nav">Navigation</button>
+<!-- stuff -->
+<nav id="nav">
+  <!-- stuff -->
+</nav>
+```

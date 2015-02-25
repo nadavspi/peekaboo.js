@@ -5,7 +5,15 @@
         return this.each(function() {
             var $this = $(this);
             var $toggle = $this;
-            var $next = $this.next();
+            var $next;
+
+            // Use the data attribute if specified
+            // Otherwise, toggle the next element
+            if ($this.data('toggle-target')) {
+                $next = $('#' + $this.data('toggle-target'));
+            } else {
+                $next = $this.next();
+            }
 
             var toggleAttr = function($element, attribute) {
                 var currentValue = $element.attr(attribute) === 'true';
