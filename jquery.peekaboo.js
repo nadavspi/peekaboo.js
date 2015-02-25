@@ -28,7 +28,7 @@
             // If the toggle isn't not a button, wrap its contents in a <button>
             // Better than adding button role because we don't lose the element's semantics
             if (this.nodeName.toLowerCase() !== 'button') {
-                $this.wrapInner('<button aria-expanded="false" aria-controls="' + $next.attr('id') + '">');
+                $this.wrapInner('<button type="button" aria-expanded="false" aria-controls="' + $next.attr('id') + '">');
                 $toggle = $this.find('button');
             } else {
                 $this.attr('aria-expanded', false).attr('aria-controls', $next.attr('id'));
