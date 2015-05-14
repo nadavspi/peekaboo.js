@@ -35,7 +35,11 @@
             }
 
             // Hide the content
-            $next.attr('aria-hidden', true);
+            if ($this.attr('aria-expanded')) {
+                $next.attr('aria-hidden', false);
+            } else {
+                $next.attr('aria-hidden', true);
+            }
 
             $toggle.on('click', function() {
                 toggleAttr($toggle, 'aria-expanded');
