@@ -1,5 +1,10 @@
-(function($) {
-
+(function (factory) {
+  if (typeof module === 'object' && typeof modul.exports === 'object') {
+    module.exports = factory(require('jquery'), window);
+  } else {
+    factory(jQuery, window);
+  }
+}(function($, window) {
   $.fn.peekaboo = function(options) {
     const config = $.extend({
       namespace: 'peekaboo',
@@ -53,8 +58,10 @@
 
       // Generate an ID for the content if there isn't one
       if (!$next.attr('id')) {
-        $next.attr('id',
-                   `${config.namespace}-${Math.random().toString(36).substr(2, 9)}`);
+        $next.attr(
+          'id',
+          `${config.namespace}-${Math.random().toString(36).substr(2, 9)}`
+        );
       }
 
       // If the toggle isn't a button, wrap it in a <button>
@@ -80,4 +87,4 @@
     });
   };
 
-}(window.jQuery));
+}));
