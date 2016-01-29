@@ -4,7 +4,39 @@ A jQuery plugin for accessible content toggles. Inspired by Heydon Pickering's
 [progressive
 collapsibles](http://heydonworks.com/practical_aria_examples/#progressive-collapsibles) and toggleSingle() from Magento's RWD theme.
 
-## Example markup
+Peekaboo is written in ES6, so you'll probably need to use [Babel](https://babeljs.io/) or some other transpiler.
+
+
+## Example use
+
+### CommonJS module
+
+
+```js
+import $ from 'jquery';
+import peekaboo from 'peekaboo-toggle';
+
+$('.toggle-next').peekaboo();
+```
+
+```html
+<button class="toggle-next">Navigation</button>
+<nav>
+  <!-- stuff -->
+</nav>
+```
+
+```css
+[aria-hidden="true"] {
+  display: none;
+}
+
+[aria-hidden="false"] {
+  display: block;
+}
+```
+
+### Script tag
 
 ```html
 <button class="toggle-next">Navigation</button>

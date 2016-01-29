@@ -1,0 +1,28 @@
+{
+  "name": "peekaboo-toggle",
+  "version": "1.0.0",
+  "description": "A jQuery plugin for accessible content toggles.",
+  "main": "jquery.peekaboo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadavspi/peekaboo.js.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "accordion",
+    "accessibility"
+  ],
+  "author": "Nadav Spiegelman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nadavspi/peekaboo.js/issues"
+  },
+  "homepage": "https://github.com/nadavspi/peekaboo.js#readme",
+  "dependencies": {
+    "jquery": ">= 1.8.0"
+  }
+}
