@@ -1,6 +1,6 @@
 {
   "name": "peekaboo-toggle",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A jQuery plugin for accessible content toggles.",
   "main": "lib/index.js",
   "scripts": {
