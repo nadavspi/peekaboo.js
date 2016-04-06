@@ -24,7 +24,7 @@
     "url": "https://github.com/nadavspi/peekaboo.js/issues"
   },
   "homepage": "https://github.com/nadavspi/peekaboo.js#readme",
-  "dependencies": {
+  "peerDependencies": {
     "jquery": ">= 1.8.0"
   },
   "devDependencies": {
