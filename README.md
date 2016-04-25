@@ -62,7 +62,7 @@ $('.toggle-next').peekaboo();
 
 ### Toggling some other element
 
-You can specify the ID of the content you'd like to toggle using the `data-toggle-target` attribute. This is useful if the content doesn't immediately follow the toggle button in your document.
+You can specify the ID of the content you'd like to toggle using the `data-toggle-target` or `aria-control` attributes. This is useful if the content doesn't immediately follow the toggle button in your document.
 
 ```html
 <button class="toggle-next" data-toggle-target="nav">Navigation</button>
@@ -70,4 +70,10 @@ You can specify the ID of the content you'd like to toggle using the `data-toggl
 <nav id="nav">
   <!-- stuff -->
 </nav>
+
+<button class="toggle-next" aria-controls="look-at-me">I toggle the #look-at-me div</button>
+<!-- stuff -->
+<div id="look-at-me">
+  <!-- stuff -->
+</div>
 ```
