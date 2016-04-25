@@ -23,10 +23,12 @@
       let $toggle = $this;
       let $next;
 
-      // Use the data attribute if specified
+      // Use the data or aria attribute, if specified
       // Otherwise, toggle the next element
       if ($this.data('toggle-target')) {
         $next = $('#' + $this.data('toggle-target'));
+      } else if ($this.attr('aria-controls')) {
+        $next = $('#' + $this.attr('aria-controls'));
       } else {
         $next = $this.next();
       }
