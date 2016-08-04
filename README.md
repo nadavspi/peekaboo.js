@@ -1,63 +1,76 @@
 # peekaboo.js
 
-A jQuery plugin for accessible content toggles. Inspired by Heydon Pickering's
-[progressive
-collapsibles](http://heydonworks.com/practical_aria_examples/#progressive-collapsibles) and toggleSingle() from Magento's RWD theme.
+A jQuery plugin for showing and hiding content in an accessible way.
 
-## Example use
+## Features 
 
-### CommonJS module
+- Flexible for most cases where you need to show/hide stuff, such as menus,
+  accordions, tabs.
+- Simple by default, and customizable for more complex uses.
+- Adds ARIA attributes and a `<button>` element (when necessary) for keyboard and screen reader accessibility.
 
+## Installation
+
+With npm:
+
+```bash
+npm install --save peekaboo-toggle
+```
+
+With npmcdn:
+
+```html
+<script src="https://npmcdn.com/peekaboo-toggle/lib/index.js"></script>
+```
+
+## How to use
+
+By default, a peekaboo toggle will show/hide the next element in the DOM. Let's
+say we have a button that should show/hide a menu when clicked:
+
+```html
+<button class="peekaboo">Menu</button>
+<nav>
+  <ul>
+    <li><a href="breakfast.html">Breakfast</a></li>
+    <li><a href="lunch.html">Lunch</a></li>
+    <li><a href="dinner.html">Dinner</a></li>
+  </ul>
+</nav>
+```
+
+We bind peekaboo to the button like this:
 
 ```js
+// If you're using npm
 import $ from 'jquery';
 import peekaboo from 'peekaboo-toggle';
 
-$('.toggle-next').peekaboo();
+$('.peekaboo').peekaboo();
 ```
 
-```html
-<button class="toggle-next">Navigation</button>
-<nav>
-  <!-- stuff -->
-</nav>
-```
+Peekaboo will add the [`hidden` attribute] to the `<nav>`, so let's add some
+CSS to make sure hidden means hidden:
 
 ```css
-[aria-hidden="true"] {
-  display: none;
-}
-
-[aria-hidden="false"] {
-  display: block;
+[hidden] {
+  display: none !important;
 }
 ```
 
-### Script tag
+Peekaboo will add the `aria-expanded` and `aria-controls` attributes to the
+`<button>` and will &emdash; since we didn't specify one &emdash; generate an
+ID for the `<nav>`. The nav will be hidden by default, and the DOM will look something like this:
 
 ```html
-<button class="toggle-next">Navigation</button>
-<nav>
-  <!-- stuff -->
+<button class="peekaboo" aria-expanded="false" aria-controls="peekaboo-c4tlipic9">Menu</button>
+<nav id="peekaboo-c4tlipic9" hidden="hidden">
+  <ul>
+    <li><a href="breakfast.html">Breakfast</a></li>
+    <li><a href="lunch.html">Lunch</a></li>
+    <li><a href="dinner.html">Dinner</a></li>
+  </ul>
 </nav>
-
-<h2 class="toggle-next">What happens next?</h2>
-<p>Surprise!</p>
-
-<script src="jquery.peekaboo.js"></script>
-<script>
-  $('.toggle-next').peekaboo();
-</script>
-```
-
-```css
-[aria-hidden="true"] {
-  display: none;
-}
-
-[aria-hidden="false"] {
-  display: block;
-}
 ```
 
 ### Toggling some other element
@@ -65,15 +78,13 @@ $('.toggle-next').peekaboo();
 You can specify the ID of the content you'd like to toggle using the `data-toggle-target` or `aria-control` attributes. This is useful if the content doesn't immediately follow the toggle button in your document.
 
 ```html
-<button class="toggle-next" data-toggle-target="nav">Navigation</button>
-<!-- stuff -->
-<nav id="nav">
-  <!-- stuff -->
+<button class="peekaboo" aria-controls="menu">Menu</button>
+<h2>We have many beautiful things on our menus.</h2>
+<nav id="menu">
+  <ul>
+    <li><a href="breakfast.html">Breakfast</a></li>
+    <li><a href="lunch.html">Lunch</a></li>
+    <li><a href="dinner.html">Dinner</a></li>
+  </ul>
 </nav>
-
-<button class="toggle-next" aria-controls="look-at-me">I toggle the #look-at-me div</button>
-<!-- stuff -->
-<div id="look-at-me">
-  <!-- stuff -->
-</div>
 ```
