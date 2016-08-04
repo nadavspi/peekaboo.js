@@ -79,8 +79,7 @@ CSS to make sure hidden means hidden:</p>
 <code>&lt;button&gt;</code> and will &amp;emdash; since we didn't specify one &amp;emdash; generate an
 ID for the <code>&lt;nav&gt;</code>. The result:</p>
 
-<p data-height="265" data-theme-id="0" data-slug-hash="wWYvXW" data-default-tab="html,result" data-user="nadavspi" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nadavspi/pen/wWYvXW/">wWYvXW</a> by Nadav Spiegelman (<a href="http://codepen.io/nadavspi">@nadavspi</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="265" data-theme-id="0" data-slug-hash="wWYvXW" data-default-tab="html,result" data-user="nadavspi" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nadavspi/pen/wWYvXW/">Peekaboo: Simple Example</a> by Nadav Spiegelman (<a href="http://codepen.io/nadavspi">@nadavspi</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 <h3>
 <a id="toggling-some-other-element" class="anchor" href="#toggling-some-other-element" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Toggling some other element</h3>
@@ -95,7 +94,30 @@ ID for the <code>&lt;nav&gt;</code>. The result:</p>
     &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>lunch.html<span class="pl-pds">"</span></span>&gt;Lunch&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
     &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dinner.html<span class="pl-pds">"</span></span>&gt;Dinner&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
   &lt;/<span class="pl-ent">ul</span>&gt;
-&lt;/<span class="pl-ent">nav</span>&gt;</pre></div>
+&lt;/<span class="pl-ent">nav</span>&gt;</pre></div> 
+
+<p data-height="265" data-theme-id="0" data-slug-hash="rLqNoJ" data-default-tab="html,result" data-user="nadavspi" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/nadavspi/pen/rLqNoJ/">Peekaboo: Complex Example</a> by Nadav Spiegelman (<a href="http://codepen.io/nadavspi">@nadavspi</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+<h3>
+  <a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<p>The following options are available, shown with the default values:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.peekaboo<span class="pl-pds">'</span></span>).<span class="pl-en">peekaboo</span>({
+  <span class="pl-c">// Prefix for generated IDs and namespace the event listener</span>
+  namespace<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>peekaboo<span class="pl-pds">'</span></span>,
+
+  <span class="pl-c">// Class name(s) added to generated button (if applicable)</span>
+  buttonClassname<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>button--transparent<span class="pl-pds">'</span></span>,
+
+  <span class="pl-c">// Called after the event.</span>
+  <span class="pl-c">// Receives the event object as an argument.</span>
+  <span class="pl-en">callback</span><span class="pl-k">:</span> () <span class="pl-k">=&gt;</span> {},
+
+  <span class="pl-c">// When true, the click event will be removed</span>
+  <span class="pl-c">// If a &lt;button&gt; was generated, it'll also be removed</span>
+  destruct<span class="pl-k">:</span> <span class="pl-c1">false</span>
+});</pre></div>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/nadavspi/peekaboo.js">Peekaboo.js</a> is maintained by <a href="https://github.com/nadavspi">nadavspi</a>.</span>
@@ -106,5 +128,6 @@ ID for the <code>&lt;nav&gt;</code>. The result:</p>
     </section>
 
   
+    <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
   </body>
 </html>
