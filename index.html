@@ -68,7 +68,7 @@ say we have a button that should show/hide a menu when clicked:</p>
 
 <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.peekaboo<span class="pl-pds">'</span></span>).<span class="pl-en">peekaboo</span>();</pre></div>
 
-<p>Peekaboo will add the [<code>hidden</code> attribute] to the <code>&lt;nav&gt;</code>, so let's add some
+<p>Peekaboo will add the [<code>hidden</code> attribute] to the <code>&lt;nav&gt;</code>. We may have to add some
 CSS to make sure hidden means hidden:</p>
 
 <div class="highlight highlight-source-css"><pre>[hidden] {
@@ -77,16 +77,11 @@ CSS to make sure hidden means hidden:</p>
 
 <p>Peekaboo will add the <code>aria-expanded</code> and <code>aria-controls</code> attributes to the
 <code>&lt;button&gt;</code> and will &amp;emdash; since we didn't specify one &amp;emdash; generate an
-ID for the <code>&lt;nav&gt;</code>. The nav will be hidden by default, and the DOM will look something like this:</p>
+ID for the <code>&lt;nav&gt;</code>. The result:</p>
 
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo<span class="pl-pds">"</span></span> <span class="pl-e">aria-expanded</span>=<span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> <span class="pl-e">aria-controls</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo-c4tlipic9<span class="pl-pds">"</span></span>&gt;Menu&lt;/<span class="pl-ent">button</span>&gt;
-&lt;<span class="pl-ent">nav</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo-c4tlipic9<span class="pl-pds">"</span></span> <span class="pl-e">hidden</span>=<span class="pl-s"><span class="pl-pds">"</span>hidden<span class="pl-pds">"</span></span>&gt;
-  &lt;<span class="pl-ent">ul</span>&gt;
-    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>breakfast.html<span class="pl-pds">"</span></span>&gt;Breakfast&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>lunch.html<span class="pl-pds">"</span></span>&gt;Lunch&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dinner.html<span class="pl-pds">"</span></span>&gt;Dinner&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
-  &lt;/<span class="pl-ent">ul</span>&gt;
-&lt;/<span class="pl-ent">nav</span>&gt;</pre></div>
+<p>See the Pen <a href="http://codepen.io/nadavspi/pen/wWYvXW/">wWYvXW</a> by Nadav Spiegelman (<a href="http://codepen.io/nadavspi">@nadavspi</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
 
 <h3>
 <a id="toggling-some-other-element" class="anchor" href="#toggling-some-other-element" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Toggling some other element</h3>
