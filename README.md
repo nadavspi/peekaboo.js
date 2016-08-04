@@ -88,3 +88,24 @@ You can specify the ID of the content you'd like to toggle using the `data-toggl
   </ul>
 </nav>
 ```
+### Options
+
+The following options are available, shown with the default values:
+
+```javascript
+$('.peekaboo').peekaboo({
+  // Prefix for generated IDs and namespace the event listener
+  namespace: 'peekaboo',
+
+  // Class name(s) added to generated button (if applicable)
+  buttonClassname: 'button--transparent',
+
+  // Called after the event.
+  // Receives the event object as an argument.
+  callback: () => {},
+
+  // When true, the click event will be removed
+  // If a <button> was generated, it'll also be removed
+  destruct: false
+});
+```
