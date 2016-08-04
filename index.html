@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Peekaboo.js by nadavspi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Peekaboo.js</h1>
+      <h2 class="project-tagline"> jQuery plugin for showing and hiding content in an accessible way.</h2>
+      <a href="https://github.com/nadavspi/peekaboo.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/nadavspi/peekaboo.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/nadavspi/peekaboo.js/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="peekaboojs" class="anchor" href="#peekaboojs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>peekaboo.js</h1>
+
+<p>A jQuery plugin for showing and hiding content in an accessible way.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Flexible for most cases where you need to show/hide stuff, such as menus,
+accordions, tabs.</li>
+<li>Simple by default, and customizable for more complex uses.</li>
+<li>Adds ARIA attributes and a <code>&lt;button&gt;</code> element (when necessary) for keyboard and screen reader accessibility.</li>
+</ul>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>With npm:</p>
+
+<div class="highlight highlight-source-shell"><pre>npm install --save peekaboo-toggle</pre></div>
+
+<p>With npmcdn:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>https://npmcdn.com/peekaboo-toggle/lib/index.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
+
+<h2>
+<a id="how-to-use" class="anchor" href="#how-to-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to use</h2>
+
+<p>By default, a peekaboo toggle will show/hide the next element in the DOM. Let's
+say we have a button that should show/hide a menu when clicked:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo<span class="pl-pds">"</span></span>&gt;Menu&lt;/<span class="pl-ent">button</span>&gt;
+&lt;<span class="pl-ent">nav</span>&gt;
+  &lt;<span class="pl-ent">ul</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>breakfast.html<span class="pl-pds">"</span></span>&gt;Breakfast&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>lunch.html<span class="pl-pds">"</span></span>&gt;Lunch&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dinner.html<span class="pl-pds">"</span></span>&gt;Dinner&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+  &lt;/<span class="pl-ent">ul</span>&gt;
+&lt;/<span class="pl-ent">nav</span>&gt;</pre></div>
+
+<p>We bind peekaboo to the button like this:</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-c">// If you're using npm</span>
+<span class="pl-k">import</span> $ <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> <span class="pl-smi">peekaboo</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>peekaboo-toggle<span class="pl-pds">'</span></span>;
+
+<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.peekaboo<span class="pl-pds">'</span></span>).<span class="pl-en">peekaboo</span>();</pre></div>
+
+<p>Peekaboo will add the [<code>hidden</code> attribute] to the <code>&lt;nav&gt;</code>, so let's add some
+CSS to make sure hidden means hidden:</p>
+
+<div class="highlight highlight-source-css"><pre>[hidden] {
+  <span class="pl-c1"><span class="pl-c1">display</span></span>: <span class="pl-c1">none</span> <span class="pl-k">!important</span>;
+}</pre></div>
+
+<p>Peekaboo will add the <code>aria-expanded</code> and <code>aria-controls</code> attributes to the
+<code>&lt;button&gt;</code> and will &amp;emdash; since we didn't specify one &amp;emdash; generate an
+ID for the <code>&lt;nav&gt;</code>. The nav will be hidden by default, and the DOM will look something like this:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo<span class="pl-pds">"</span></span> <span class="pl-e">aria-expanded</span>=<span class="pl-s"><span class="pl-pds">"</span>false<span class="pl-pds">"</span></span> <span class="pl-e">aria-controls</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo-c4tlipic9<span class="pl-pds">"</span></span>&gt;Menu&lt;/<span class="pl-ent">button</span>&gt;
+&lt;<span class="pl-ent">nav</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo-c4tlipic9<span class="pl-pds">"</span></span> <span class="pl-e">hidden</span>=<span class="pl-s"><span class="pl-pds">"</span>hidden<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">ul</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>breakfast.html<span class="pl-pds">"</span></span>&gt;Breakfast&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>lunch.html<span class="pl-pds">"</span></span>&gt;Lunch&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dinner.html<span class="pl-pds">"</span></span>&gt;Dinner&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+  &lt;/<span class="pl-ent">ul</span>&gt;
+&lt;/<span class="pl-ent">nav</span>&gt;</pre></div>
+
+<h3>
+<a id="toggling-some-other-element" class="anchor" href="#toggling-some-other-element" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Toggling some other element</h3>
+
+<p>You can specify the ID of the content you'd like to toggle using the <code>data-toggle-target</code> or <code>aria-control</code> attributes. This is useful if the content doesn't immediately follow the toggle button in your document.</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>peekaboo<span class="pl-pds">"</span></span> <span class="pl-e">aria-controls</span>=<span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>&gt;Menu&lt;/<span class="pl-ent">button</span>&gt;
+&lt;<span class="pl-ent">h2</span>&gt;We have many beautiful things on our menus.&lt;/<span class="pl-ent">h2</span>&gt;
+&lt;<span class="pl-ent">nav</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>menu<span class="pl-pds">"</span></span>&gt;
+  &lt;<span class="pl-ent">ul</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>breakfast.html<span class="pl-pds">"</span></span>&gt;Breakfast&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>lunch.html<span class="pl-pds">"</span></span>&gt;Lunch&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+    &lt;<span class="pl-ent">li</span>&gt;&lt;<span class="pl-ent">a</span> <span class="pl-e">href</span>=<span class="pl-s"><span class="pl-pds">"</span>dinner.html<span class="pl-pds">"</span></span>&gt;Dinner&lt;/<span class="pl-ent">a</span>&gt;&lt;/<span class="pl-ent">li</span>&gt;
+  &lt;/<span class="pl-ent">ul</span>&gt;
+&lt;/<span class="pl-ent">nav</span>&gt;</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/nadavspi/peekaboo.js">Peekaboo.js</a> is maintained by <a href="https://github.com/nadavspi">nadavspi</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
