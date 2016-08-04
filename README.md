@@ -2,6 +2,8 @@
 
 A jQuery plugin for showing and hiding content in an accessible way.
 
+[View demos](https://nadavspi.github.io/peekaboo.js/).
+
 ## Features 
 
 - Flexible for most cases where you need to show/hide stuff, such as menus,
