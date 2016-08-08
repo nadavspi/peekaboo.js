@@ -77,7 +77,7 @@ ID for the `<nav>`. The nav will be hidden by default, and the DOM will look som
 
 ### Toggling some other element
 
-You can specify the ID of the content you'd like to toggle using the `data-toggle-target` or `aria-control` attributes. This is useful if the content doesn't immediately follow the toggle button in your document.
+You can specify the ID of the content you'd like to toggle using the `data-toggle-target` or `aria-controls` attributes. This is useful if the content doesn't immediately follow the toggle button in your document.
 
 ```html
 <button class="peekaboo" aria-controls="menu">Menu</button>
