@@ -19,10 +19,10 @@ With npm:
 npm install --save peekaboo-toggle
 ```
 
-With npmcdn:
+With unpkg:
 
 ```html
-<script src="https://npmcdn.com/peekaboo-toggle/lib/index.js"></script>
+<script src="https://unpkg.com/peekaboo-toggle/lib/index.js"></script>
 ```
 
 ## How to use
