@@ -53,7 +53,7 @@
       }
 
       // Use existing aria-expanded value to allow expanded by default
-      let isExpanded = !!$this.attr('aria-expanded');
+      let isExpanded = $this.attr('aria-expanded') === 'true';
       if (window.location.hash == '#' + $this.attr('id')) {
         isExpanded = true;
       }

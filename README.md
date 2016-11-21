@@ -4,7 +4,7 @@ A jQuery plugin for showing and hiding content in an accessible way.
 
 [View demos](https://nadavspi.github.io/peekaboo.js/).
 
-## Features 
+## Features
 
 - Flexible for most cases where you need to show/hide stuff, such as menus,
   accordions, tabs.
@@ -61,7 +61,7 @@ CSS to make sure hidden means hidden:
 ```
 
 Peekaboo will add the `aria-expanded` and `aria-controls` attributes to the
-`<button>` and will &emdash; since we didn't specify one &emdash; generate an
+`<button>` and will &mdash; since we didn't specify one &mdash; generate an
 ID for the `<nav>`. The nav will be hidden by default, and the DOM will look something like this:
 
 ```html
